@@ -37,7 +37,8 @@ public class SettingActivity extends AppCompatActivity {
     Switch swReminder;
     @BindView(R.id.tv_time_reminder)
     TextView tvTimeReminder;
-
+//    @BindView(R.id.aboutus)
+//    TextView  ivabout;
     String time;
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
@@ -87,7 +88,7 @@ public class SettingActivity extends AppCompatActivity {
                 break;
         }
     }
-
+//    @OnClick({R.id.aboutus})
     private void saveSetting() {
 
         AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);

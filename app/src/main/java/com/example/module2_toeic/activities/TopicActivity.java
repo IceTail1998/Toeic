@@ -8,7 +8,9 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ExpandableListView;
+import android.widget.ImageView;
 
 import com.example.module2_toeic.R;
 import com.example.module2_toeic.activities.SettingActivity;
@@ -20,11 +22,17 @@ import com.example.module2_toeic.models.TopicModel;
 import java.util.HashMap;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.OnClick;
+
 public class TopicActivity extends AppCompatActivity {
 
     private ExpandableListView lvTopics;
 
     private ToeicExpandableListAdapter toeicExpandableListAdapter;
+//    @BindView(R.id.iv_back)
+//    ImageView ivBack;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,4 +69,13 @@ public class TopicActivity extends AppCompatActivity {
         startActivity(intent);
         return super.onOptionsItemSelected(item);
     }
+
+//    @OnClick({R.id.iv_back})
+//    public void onViewClicked(View view) {
+//        switch (view.getId()) {
+//            case R.id.iv_back:
+//                onBackPressed();
+//                break;
+//        }
+//    }
 }

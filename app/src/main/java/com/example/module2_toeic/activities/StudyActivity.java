@@ -8,9 +8,11 @@ import android.animation.LayoutTransition;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Chronometer;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -26,6 +28,9 @@ import com.example.module2_toeic.R;
 import com.example.module2_toeic.database.DatabaseUtils;
 import com.example.module2_toeic.models.TopicModel;
 import com.example.module2_toeic.models.WordModel;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -79,7 +84,9 @@ public class StudyActivity extends AppCompatActivity {
     EditText etEnglish;
     @BindView(R.id.btn_test)
     Button btnTest;
-
+//    TextView txttime;
+//    CountDownTimer count_obj;
+//    Chronometer simplechrono;
     private int preWordId = -1;
     private WordModel wordModel;
     private AnimatorSet animatorSet;
@@ -90,8 +97,14 @@ public class StudyActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_study);
         ButterKnife.bind(this);
-
         loadData();
+//        txttime = (TextView) findViewById(R.id.txttime);
+//        Calendar calendar = Calendar.getInstance();
+//        SimpleDateFormat dinhdangngay = new SimpleDateFormat("dd/MM/yyyy");
+//        txttime.append(dinhdangngay.format(calendar.getTime()) + "") ;
+        Chronometer simplechrono = (Chronometer) findViewById(R.id.txttime);
+        simplechrono.start();
+
     }
 
     private void nextWord(boolean isKnown) {

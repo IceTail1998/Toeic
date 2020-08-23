@@ -15,6 +15,7 @@
         <RelativeLayout
             android:paddingTop="@dimen/space_large"
             android:paddingStart="@dimen/space_large"
+            android:paddingLeft="@dimen/space_medium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             
@@ -36,7 +37,9 @@
                 android:layout_height="wrap_content"
                 android:textColor="@color/textTransparent"
                 android:layout_toStartOf="@id/iv_arrow"
-                android:text="TopicModel{id=1, name='Contracts'}, TopicModel{id=2, name='Marketing'},"/>
+                android:text="TopicModel{id=1, name='Contracts'}, TopicModel{id=2, name='Marketing'},"
+                android:gravity="start"
+                android:layout_toLeftOf="@id/iv_arrow" />
 
             <ImageView
                 android:id="@+id/iv_arrow"
@@ -45,7 +48,8 @@
                 android:padding="@dimen/space_large"
                 android:layout_alignParentEnd="true"
                 android:layout_alignBottom="@id/tv_topics"
-                android:src="@drawable/ic_keyboard_arrow_down_black_24dp"/>
+                android:src="@drawable/ic_keyboard_arrow_down_black_24dp"
+                android:layout_alignParentRight="true" />
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 </RelativeLayout>
